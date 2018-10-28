@@ -1,0 +1,10 @@
+{
+    "api_key": "",
+    "api_secret": "",
+    "token": "",
+    "working_board": "To Do List",
+    "num_tasks": 3,
+    "from_email": "python@example.com",
+    "to_email": "me@example.com",
+    "smtp_server": "mail.example.com"
+}
