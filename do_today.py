@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+"""
+This module will get a number of random tasks from a trello board and email them to you
+"""
+
 import json
 import random
 import smtplib
@@ -36,7 +40,7 @@ def main():
     client = TrelloClient(api_key=CONFIG["api_key"],
                           api_secret=CONFIG["api_secret"],
                           token=CONFIG["token"])
-    
+
     # Have to get all boards to find working board by name
     all_boards = client.list_boards()
 
@@ -44,7 +48,7 @@ def main():
     for board in all_boards:
         if board.name == CONFIG["working_board"]:
             working_board = board
-    
+
     # Get a number of tasks from working_board
     tasks = get_rand_task(working_board.get_cards(), CONFIG["num_tasks"])
 
